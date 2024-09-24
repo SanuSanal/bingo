@@ -1,38 +1,124 @@
-.App {
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f7f7f7;
   min-height: 100vh;
+}
+
+.header {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.grid {
+  display: inline-block;
+  margin: 20px;
+}
+
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #333;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #f1f1f1;
+}
+
+.cell.marked {
+  background-color: #f28b82;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bingo-letters {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bingo-letter {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border: 2px solid #333;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+
+.bingo-letter.marked-B {
+  background-color: blue;
+  color: white;
+}
+
+.bingo-letter.marked-I {
+  background-color: indigo;
+  color: white;
+}
+
+.bingo-letter.marked-N {
+  background-color: navy;
+  color: white;
+}
+
+.bingo-letter.marked-G {
+  background-color: green;
+  color: white;
+}
+
+.bingo-letter.marked-O {
+  background-color: orange;
+  color: white;
+}
+
+.winner-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border: 3px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+}
+
+.winner-popup h2 {
+  font-size: 2rem;
+  color: #333;
 }
